@@ -6,23 +6,37 @@ The website for VOTUM3 — a brand strategy studio for founder-led and heritage 
 
 ## Structure
 
-This is a single-page HTML website with no build step or framework. Everything lives in one file.
+This is a multi-page HTML website with no build step or framework. Everything lives in flat files.
 
 ```
 votum3/
-├── index.html      ← the entire website
-├── README.md       ← this file
-└── DEPLOY.md       ← deployment guide
+├── index.html         ← the homepage
+├── namys.html         ← case study: Namys Group
+├── sandco.html        ← case study: SandCo
+├── sapa.html          ← case study: SapaProMaterials
+├── images/            ← all case study images
+│   ├── namys-hero.jpg
+│   ├── namys-landscape.jpg
+│   ├── namys-logo.png
+│   ├── sandco-hero.jpg
+│   └── sapa-brandbook.png
+├── README.md          ← this file
+└── DEPLOY.md          ← deployment guide
 ```
 
 ## Editing
 
 The site is written in plain HTML, CSS, and a small amount of JavaScript for the contact form. To edit:
 
-1. Open `index.html` in any text editor — VS Code is recommended, but TextEdit, Sublime, or even GitHub's web editor work.
+1. Open the relevant file in any text editor — VS Code is recommended, but TextEdit, Sublime, or even GitHub's web editor work.
+ - `index.html` is the homepage
+ - `namys.html`, `sandco.html`, `sapa.html` are the case study pages
+ - Images live in the `images/` folder
 2. Make your changes.
 3. Save the file. If editing locally, commit and push to GitHub. If editing on GitHub.com, commit directly.
 4. GitHub Pages rebuilds the site automatically within ~1 minute.
+
+To add a new case study, duplicate one of the existing project pages, swap in the new images and text, and add a card to the projects grid on `index.html`.
 
 ## Contact form
 
