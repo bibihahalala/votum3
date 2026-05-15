@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SapaProMaterials — A successful regional business, made visible · VOTUM3</title>
-<meta name="description" content="VOTUM3 case study: building the brand from the ground up for SapaProMaterials, a concrete manufacturer that had grown through reputation and word-of-mouth alone.">
+<title>MaxaWatch — Data, without the trade-off · VOTUM3</title>
+<meta name="description" content="VOTUM3 engagement in flight: full brand build for MaxaWatch, a movement tracker engineered to disappear under the wristwatch you already own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
 
   .wrap > * { position: relative; z-index: 2; }
 
-  /* nav (shared with homepage) */
+  /* nav */
   nav {
     position: sticky;
     top: 0;
@@ -143,6 +143,21 @@
     height: 1px;
     background: var(--mint);
   }
+  .case-meta .flight-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+    margin-left: 4px;
+    box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6);
+    animation: flight-pulse 2.4s ease-out infinite;
+  }
+  @keyframes flight-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(111, 152, 156, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0); }
+  }
   .case-title {
     font-size: clamp(48px, 8vw, 112px);
     font-weight: 900;
@@ -163,21 +178,21 @@
     font-weight: 300;
     margin-bottom: 60px;
   }
+  /* darker hero plate for the dark MaxaWatch diagram */
   .case-hero-image {
     width: 100%;
     aspect-ratio: 16/9;
     background-size: cover;
     background-position: var(--focus, center center);
     background-repeat: no-repeat;
-    background-color: var(--cream-warm);
+    background-color: #1A1A1C;
     border-radius: 4px;
     margin-bottom: 100px;
   }
   .case-hero-image--contain {
     background-size: contain;
     background-position: center center;
-    background-color: var(--cream-warm);
-    padding: 32px;
+    padding: 8px;
   }
 
   /* facts strip */
@@ -206,8 +221,12 @@
     color: var(--ink);
     line-height: 1.4;
   }
+  .case-fact-value .in-flight {
+    color: var(--mint);
+    font-weight: 700;
+  }
 
-  /* case body — two column */
+  /* body */
   .case-body {
     max-width: 1280px;
     margin: 0 auto;
@@ -248,136 +267,111 @@
     margin-bottom: 20px;
   }
   .case-section-body p:last-child { margin-bottom: 0; }
-  .case-section-body strong { font-weight: 700; }
-  .case-section-body a {
-    color: var(--purple);
-    text-decoration: none;
-    border-bottom: 1px solid var(--mint);
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .case-section-body a:hover {
-    color: var(--purple-deep);
-    border-bottom-color: var(--purple);
-  }
 
-  /* gallery */
-  .case-gallery {
+  /* spec callout — leverages the exploded-view aesthetic */
+  .spec-callout {
     max-width: 1280px;
     margin: 80px auto 0;
-    padding: 0 40px;
+    padding: 80px 40px;
+    background: #1A1A1C;
+    color: var(--cream);
+    border-radius: 4px;
   }
-  .case-gallery-label {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 32px;
-    font-weight: 700;
-  }
-  .case-gallery-grid {
+  .spec-callout-inner {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .case-gallery-item {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: var(--focus, center center);
-    background-repeat: no-repeat;
-    background-color: var(--cream-warm);
-    border-radius: 4px;
-  }
-  .case-gallery-item--contain {
-    background-size: contain;
-    background-position: center center;
-    background-color: var(--cream);
-    padding: 24px;
-  }
-
-  /* press section */
-  .case-press {
-    max-width: 1280px;
-    margin: 80px auto 0;
-    padding: 60px 40px;
-    background: var(--cream-warm);
-    border-radius: 4px;
-  }
-  .case-press-label {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--mint);
-    margin-bottom: 24px;
-    font-weight: 700;
-  }
-  .case-press-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .case-press-list a {
-    font-size: 22px;
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s ease;
-    display: inline-flex;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
     align-items: center;
-    gap: 12px;
   }
-  .case-press-list a:hover { color: var(--purple); }
-  .case-press-list .arrow {
-    color: var(--mint);
-    transition: transform 0.2s ease;
-  }
-  .case-press-list a:hover .arrow {
-    transform: translate(4px, -4px);
-  }
-
-  /* next case CTA */
-  .next-case {
-    margin-top: 120px;
-    background: var(--purple);
-    padding: 100px 40px;
+  .spec-callout-figure {
+    font-size: clamp(80px, 10vw, 140px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
     color: var(--cream);
   }
-  .next-case-inner {
+  .spec-callout-figure .unit {
+    font-size: 0.35em;
+    color: var(--mint);
+    font-weight: 400;
+    margin-left: 6px;
+    letter-spacing: 0;
+  }
+  .spec-callout-body p {
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(242, 239, 232, 0.85);
+  }
+  .spec-callout-body p strong {
+    color: var(--mint);
+    font-weight: 700;
+  }
+
+  /* in-flight close */
+  .in-flight-close {
+    margin-top: 120px;
+    background: var(--cream-warm);
+    padding: 100px 40px;
+  }
+  .in-flight-close-inner {
     max-width: 1280px;
     margin: 0 auto;
   }
-  .next-case-label {
+  .in-flight-close-label {
     font-size: 12px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--mint-soft);
+    color: var(--mint);
     margin-bottom: 24px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .next-case a {
-    display: block;
-    text-decoration: none;
-    color: var(--cream);
-    transition: color 0.2s ease;
+  .in-flight-close-label::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mint);
+    box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6);
+    animation: flight-pulse 2.4s ease-out infinite;
   }
-  .next-case-name {
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    margin-bottom: 16px;
-  }
-  .next-case:hover .next-case-name {
-    color: var(--mint);
-  }
-  .next-case-snippet {
-    font-size: 20px;
-    color: var(--mint-soft);
+  .in-flight-close h2 {
+    font-size: clamp(36px, 5vw, 60px);
     font-weight: 300;
-    max-width: 720px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 900px;
+    margin-bottom: 40px;
   }
+  .in-flight-close h2 em {
+    font-style: normal;
+    font-weight: 900;
+    color: var(--purple);
+  }
+  .in-flight-close .close-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .in-flight-close .close-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+  .in-flight-close .close-links a:hover { color: var(--purple); gap: 12px; }
 
   /* footer */
   footer {
@@ -402,7 +396,6 @@
   }
   .footer-inner a:hover { color: var(--purple); }
 
-  /* responsive */
   @media (max-width: 900px) {
     .nav-inner { padding: 14px 24px; }
     .nav-links { gap: 18px; }
@@ -422,10 +415,16 @@
       gap: 16px;
       padding: 48px 0;
     }
-    .case-gallery { padding: 0 24px; }
-    .case-gallery-grid { grid-template-columns: 1fr; gap: 12px; }
-    .case-press { padding: 40px 24px; margin: 60px 0 0; border-radius: 0; }
-    .next-case { margin-top: 80px; padding: 60px 24px; }
+    .spec-callout {
+      padding: 60px 24px;
+      margin: 60px 0 0;
+      border-radius: 0;
+    }
+    .spec-callout-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .in-flight-close { margin-top: 80px; padding: 60px 24px; }
   }
 </style>
 </head>
@@ -457,24 +456,24 @@
 </div>
 
 <section class="case-hero">
-  <div class="case-meta">case study · finished work</div>
-  <h1 class="case-title">Sapa<em>Pro</em>Materials.</h1>
-  <p class="case-tagline">A successful regional business, made visible for the first time.</p>
-  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/sapa-brandbook.png'); --focus: center center;"></div>
+  <div class="case-meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
+  <h1 class="case-title">Maxa<em>Watch</em>.</h1>
+  <p class="case-tagline">A movement tracker designed to disappear — so the watch you already love can stay on your wrist.</p>
+  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/maxawatch-hero.png'); --focus: center center;"></div>
 </section>
 
 <div class="case-facts">
   <div>
-    <div class="case-fact-label">Client</div>
-    <div class="case-fact-value">SapaProMaterials</div>
-  </div>
-  <div>
     <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Industrial · concrete</div>
+    <div class="case-fact-value">Hardware · wearables</div>
   </div>
   <div>
-    <div class="case-fact-label">Scope</div>
-    <div class="case-fact-value">Strategy · Identity · Guidelines · Culture</div>
+    <div class="case-fact-label">Engagement</div>
+    <div class="case-fact-value">Full brand build</div>
+  </div>
+  <div>
+    <div class="case-fact-label">Status</div>
+    <div class="case-fact-value"><span class="in-flight">In flight</span></div>
   </div>
 </div>
 
@@ -483,44 +482,44 @@
   <div class="case-section">
     <div>
       <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">A thriving business — invisible to anyone <em>who hadn't heard the name.</em></h2>
+      <h2 class="case-section-heading">A category <em>built by collectors</em> who refused to compromise.</h2>
     </div>
     <div class="case-section-body">
-      <p>SapaProMaterials had built a successful concrete manufacturing business almost entirely through reputation. Within its region, the name was known and trusted. It is the business that had grown through word-of-mouth, returning customers, and the slow, steady work of doing the product well.</p>
-      <p>Outside that region, it didn't exist in any meaningful way. There was no brand, no public-facing articulation of who SapaProMaterials was or what it stood for. The business was thriving, but invisible to anyone who hadn't heard the name spoken in person.</p>
+      <p>MaxaWatch began with a problem its founders refused to accept. People who love their wristwatches — the pieces that hold meaning, history, taste — were being asked to take them off in exchange for a fitness band. Choose your data, or choose your craft. The two were treated as incompatible.</p>
+      <p>They aren't. MaxaWatch sits under the wristwatch you already own, invisible against the skin, and counts everything a fitness tracker counts. The watch stays on. The data still arrives. The trade-off, quietly, ends.</p>
     </div>
   </div>
 
   <div class="case-section">
     <div>
-      <div class="case-section-label">02 · What we did</div>
-      <h2 class="case-section-heading">Built the brand <em>from the ground up.</em></h2>
+      <div class="case-section-label">02 · The engagement</div>
+      <h2 class="case-section-heading">Naming the position, <em>then building the brand around it.</em></h2>
     </div>
     <div class="case-section-body">
-      <p>We built the brand from the ground up. Positioning, work ethics and culture, naming, tone of voice, visual identity, and brand guidelines — a complete identity system designed to translate everything that made SapaProMaterials trusted in its region into a brand legible to customers and partners who would only ever meet the company through a search result, a document, or a referral.</p>
-      <p>The work focused on staying faithful to the reputation already in place, while giving the business the brand infrastructure to grow beyond it.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">03 · Outcome</div>
-      <h2 class="case-section-heading">A brand that <em>matches the work itself.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SapaProMaterials now has a brand that matches the quality of the work itself, a foundation from which the business can extend its reputation into markets it had never been able to reach by word-of-mouth alone.</p>
+      <p>Our work is a full build — strategy, positioning, naming, narrative, identity system, and guidelines. The product is a strong enough idea on its own; the brand had to be strong enough to carry it without explaining itself every time.</p>
+      <p>The thesis is restraint. MaxaWatch is a category that doesn't yet have a vocabulary — it isn't a smartwatch, it isn't a fitness band, and it actively refuses to look like either. The brand has to set the terms of how the product is understood, and hold that line through every surface a buyer meets it on.</p>
     </div>
   </div>
 
 </div>
 
-<section class="next-case">
-  <div class="next-case-inner">
-    <div class="next-case-label">back to work</div>
-    <a href="index.html#projects">
-      <div class="next-case-name">All projects →</div>
-      <div class="next-case-snippet">Three engagements delivered, three in flight. Founder-led companies, family businesses, and heritage brands.</div>
-    </a>
+<section class="spec-callout">
+  <div class="spec-callout-inner">
+    <div class="spec-callout-figure">2.9<span class="unit">mm</span></div>
+    <div class="spec-callout-body">
+      <p><strong>Total thickness.</strong> Titanium casing, wireless charging coil, flat lithium-polymer cell, optical sensor, adhesive layer. Every component accounted for. The brand has to live up to the engineering — which is the part you don't see.</p>
+    </div>
+  </div>
+</section>
+
+<section class="in-flight-close">
+  <div class="in-flight-close-inner">
+    <div class="in-flight-close-label">in flight</div>
+    <h2>The full case <em>returns when the work does.</em></h2>
+    <div class="close-links">
+      <a href="index.html#projects">← all work</a>
+      <a href="index.html#contact">work with us →</a>
+    </div>
   </div>
 </section>
 

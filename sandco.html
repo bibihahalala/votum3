@@ -167,15 +167,17 @@
     width: 100%;
     aspect-ratio: 16/9;
     background-size: cover;
-    background-position: center;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
     background-color: var(--cream-warm);
     border-radius: 4px;
     margin-bottom: 100px;
   }
   .case-hero-image--contain {
     background-size: contain;
-    background-repeat: no-repeat;
+    background-position: center center;
     background-color: var(--cream-warm);
+    padding: 32px;
   }
 
   /* facts strip */
@@ -281,14 +283,16 @@
     width: 100%;
     aspect-ratio: 16/9;
     background-size: cover;
-    background-position: center;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
     background-color: var(--cream-warm);
     border-radius: 4px;
   }
   .case-gallery-item--contain {
     background-size: contain;
-    background-repeat: no-repeat;
+    background-position: center center;
     background-color: var(--cream);
+    padding: 24px;
   }
 
   /* press section */
@@ -456,7 +460,7 @@
   <div class="case-meta">case study · finished work</div>
   <h1 class="case-title">Sand<em>Co.</em></h1>
   <p class="case-tagline">A long-trusted industrial supplier, relaunched as a modern brand.</p>
-  <div class="case-hero-image" style="background-image: url('images/sandco-hero.jpg');"></div>
+  <div class="case-hero-image" style="background-image: url('images/sandco-hero.jpg'); --focus: center center;"></div>
 </section>
 
 <div class="case-facts">

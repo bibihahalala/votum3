@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SapaProMaterials — A successful regional business, made visible · VOTUM3</title>
-<meta name="description" content="VOTUM3 case study: building the brand from the ground up for SapaProMaterials, a concrete manufacturer that had grown through reputation and word-of-mouth alone.">
+<title>KANES — Utility, restated as luxury · VOTUM3</title>
+<meta name="description" content="VOTUM3 engagement in flight: shaping voice and philosophy for KANES, a leather-and-canvas label that releases in measured drops.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
 
   .wrap > * { position: relative; z-index: 2; }
 
-  /* nav (shared with homepage) */
+  /* nav */
   nav {
     position: sticky;
     top: 0;
@@ -143,6 +143,22 @@
     height: 1px;
     background: var(--mint);
   }
+  /* in-flight pulse dot */
+  .case-meta .flight-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+    margin-left: 4px;
+    box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6);
+    animation: flight-pulse 2.4s ease-out infinite;
+  }
+  @keyframes flight-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(111, 152, 156, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0); }
+  }
   .case-title {
     font-size: clamp(48px, 8vw, 112px);
     font-weight: 900;
@@ -206,8 +222,12 @@
     color: var(--ink);
     line-height: 1.4;
   }
+  .case-fact-value .in-flight {
+    color: var(--mint);
+    font-weight: 700;
+  }
 
-  /* case body — two column */
+  /* body — two column */
   .case-body {
     max-width: 1280px;
     margin: 0 auto;
@@ -248,136 +268,97 @@
     margin-bottom: 20px;
   }
   .case-section-body p:last-child { margin-bottom: 0; }
-  .case-section-body strong { font-weight: 700; }
-  .case-section-body a {
-    color: var(--purple);
-    text-decoration: none;
-    border-bottom: 1px solid var(--mint);
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .case-section-body a:hover {
-    color: var(--purple-deep);
-    border-bottom-color: var(--purple);
-  }
 
-  /* gallery */
-  .case-gallery {
+  /* secondary visual */
+  .case-secondary-image {
     max-width: 1280px;
-    margin: 80px auto 0;
-    padding: 0 40px;
+    margin: 0 auto;
+    padding: 60px 40px 0;
   }
-  .case-gallery-label {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 32px;
-    font-weight: 700;
-  }
-  .case-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .case-gallery-item {
+  .case-secondary-image__frame {
     width: 100%;
     aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: var(--focus, center center);
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: var(--cream-warm);
     border-radius: 4px;
+    padding: 40px;
   }
-  .case-gallery-item--contain {
-    background-size: contain;
-    background-position: center center;
-    background-color: var(--cream);
-    padding: 24px;
-  }
-
-  /* press section */
-  .case-press {
-    max-width: 1280px;
-    margin: 80px auto 0;
-    padding: 60px 40px;
-    background: var(--cream-warm);
-    border-radius: 4px;
-  }
-  .case-press-label {
+  .case-secondary-image__caption {
     font-size: 12px;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--mint);
-    margin-bottom: 24px;
+    color: var(--ink-soft);
+    margin-top: 16px;
     font-weight: 700;
-  }
-  .case-press-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .case-press-list a {
-    font-size: 22px;
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .case-press-list a:hover { color: var(--purple); }
-  .case-press-list .arrow {
-    color: var(--mint);
-    transition: transform 0.2s ease;
-  }
-  .case-press-list a:hover .arrow {
-    transform: translate(4px, -4px);
   }
 
-  /* next case CTA */
-  .next-case {
+  /* in-flight close */
+  .in-flight-close {
     margin-top: 120px;
-    background: var(--purple);
+    background: var(--cream-warm);
     padding: 100px 40px;
-    color: var(--cream);
   }
-  .next-case-inner {
+  .in-flight-close-inner {
     max-width: 1280px;
     margin: 0 auto;
   }
-  .next-case-label {
+  .in-flight-close-label {
     font-size: 12px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--mint-soft);
+    color: var(--mint);
     margin-bottom: 24px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .next-case a {
-    display: block;
-    text-decoration: none;
-    color: var(--cream);
-    transition: color 0.2s ease;
+  .in-flight-close-label::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mint);
+    box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6);
+    animation: flight-pulse 2.4s ease-out infinite;
   }
-  .next-case-name {
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    margin-bottom: 16px;
-  }
-  .next-case:hover .next-case-name {
-    color: var(--mint);
-  }
-  .next-case-snippet {
-    font-size: 20px;
-    color: var(--mint-soft);
+  .in-flight-close h2 {
+    font-size: clamp(36px, 5vw, 60px);
     font-weight: 300;
-    max-width: 720px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 900px;
+    margin-bottom: 40px;
   }
+  .in-flight-close h2 em {
+    font-style: normal;
+    font-weight: 900;
+    color: var(--purple);
+  }
+  .in-flight-close .close-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .in-flight-close .close-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+  .in-flight-close .close-links a:hover { color: var(--purple); gap: 12px; }
 
   /* footer */
   footer {
@@ -422,10 +403,9 @@
       gap: 16px;
       padding: 48px 0;
     }
-    .case-gallery { padding: 0 24px; }
-    .case-gallery-grid { grid-template-columns: 1fr; gap: 12px; }
-    .case-press { padding: 40px 24px; margin: 60px 0 0; border-radius: 0; }
-    .next-case { margin-top: 80px; padding: 60px 24px; }
+    .case-secondary-image { padding: 40px 24px 0; }
+    .case-secondary-image__frame { padding: 24px; }
+    .in-flight-close { margin-top: 80px; padding: 60px 24px; }
   }
 </style>
 </head>
@@ -457,24 +437,24 @@
 </div>
 
 <section class="case-hero">
-  <div class="case-meta">case study · finished work</div>
-  <h1 class="case-title">Sapa<em>Pro</em>Materials.</h1>
-  <p class="case-tagline">A successful regional business, made visible for the first time.</p>
-  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/sapa-brandbook.png'); --focus: center center;"></div>
+  <div class="case-meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
+  <h1 class="case-title">KAN<em>ES</em>.</h1>
+  <p class="case-tagline">A label built on the seam between utility and luxury — and the discipline of releasing slowly.</p>
+  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/kanes-hero.png'); --focus: center center;"></div>
 </section>
 
 <div class="case-facts">
   <div>
-    <div class="case-fact-label">Client</div>
-    <div class="case-fact-value">SapaProMaterials</div>
-  </div>
-  <div>
     <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Industrial · concrete</div>
+    <div class="case-fact-value">Fashion · accessories</div>
   </div>
   <div>
-    <div class="case-fact-label">Scope</div>
-    <div class="case-fact-value">Strategy · Identity · Guidelines · Culture</div>
+    <div class="case-fact-label">Engagement</div>
+    <div class="case-fact-value">Voice · Philosophy</div>
+  </div>
+  <div>
+    <div class="case-fact-label">Status</div>
+    <div class="case-fact-value"><span class="in-flight">In flight</span></div>
   </div>
 </div>
 
@@ -483,44 +463,40 @@
   <div class="case-section">
     <div>
       <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">A thriving business — invisible to anyone <em>who hadn't heard the name.</em></h2>
+      <h2 class="case-section-heading">Two ideas <em>most brands choose between.</em></h2>
     </div>
     <div class="case-section-body">
-      <p>SapaProMaterials had built a successful concrete manufacturing business almost entirely through reputation. Within its region, the name was known and trusted. It is the business that had grown through word-of-mouth, returning customers, and the slow, steady work of doing the product well.</p>
-      <p>Outside that region, it didn't exist in any meaningful way. There was no brand, no public-facing articulation of who SapaProMaterials was or what it stood for. The business was thriving, but invisible to anyone who hadn't heard the name spoken in person.</p>
+      <p>KANES is a label that holds two things together that most brands treat as opposites. Utility — the kind that comes from the finest leather and Scottish canvas, materials chosen because they work, not because they signal — and luxury, the kind that comes from making something quietly, deliberately, and in small numbers.</p>
+      <p>The product is a thesis. The way it's released is a thesis too: limited drops, each one finite, no restock. What KANES makes is meant to be used, kept, and slowly outnumbered by the things it outlasts.</p>
     </div>
   </div>
 
   <div class="case-section">
     <div>
-      <div class="case-section-label">02 · What we did</div>
-      <h2 class="case-section-heading">Built the brand <em>from the ground up.</em></h2>
+      <div class="case-section-label">02 · The engagement</div>
+      <h2 class="case-section-heading">Shaping the voice <em>around what the work already says.</em></h2>
     </div>
     <div class="case-section-body">
-      <p>We built the brand from the ground up. Positioning, work ethics and culture, naming, tone of voice, visual identity, and brand guidelines — a complete identity system designed to translate everything that made SapaProMaterials trusted in its region into a brand legible to customers and partners who would only ever meet the company through a search result, a document, or a referral.</p>
-      <p>The work focused on staying faithful to the reputation already in place, while giving the business the brand infrastructure to grow beyond it.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">03 · Outcome</div>
-      <h2 class="case-section-heading">A brand that <em>matches the work itself.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SapaProMaterials now has a brand that matches the quality of the work itself, a foundation from which the business can extend its reputation into markets it had never been able to reach by word-of-mouth alone.</p>
+      <p>Our work with KANES is on voice and philosophy. The product already articulates the position; what was needed was the language to match it — a way of speaking that was bold without theatre, vocal without volume, and consistent across every touchpoint the label would meet a customer through.</p>
+      <p>The brief was specific: don't soften the position. KANES is not for everyone, and that's the point. The voice has to invite the people it's for and politely lose the people it isn't.</p>
     </div>
   </div>
 
 </div>
 
-<section class="next-case">
-  <div class="next-case-inner">
-    <div class="next-case-label">back to work</div>
-    <a href="index.html#projects">
-      <div class="next-case-name">All projects →</div>
-      <div class="next-case-snippet">Three engagements delivered, three in flight. Founder-led companies, family businesses, and heritage brands.</div>
-    </a>
+<section class="case-secondary-image">
+  <div class="case-secondary-image__frame" style="background-image: url('images/kanes-technical.png');"></div>
+  <div class="case-secondary-image__caption">construction · the underlying object</div>
+</section>
+
+<section class="in-flight-close">
+  <div class="in-flight-close-inner">
+    <div class="in-flight-close-label">in flight</div>
+    <h2>The full case <em>returns when the work does.</em></h2>
+    <div class="close-links">
+      <a href="index.html#projects">← all work</a>
+      <a href="index.html#contact">work with us →</a>
+    </div>
   </div>
 </section>
 

@@ -389,14 +389,16 @@
   }
   .project-card__image {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/2;
     background-size: cover;
-    background-position: center;
+    background-position: var(--focus, center center);
     background-repeat: no-repeat;
     transition: transform 0.5s ease;
   }
   .project-card__image--contain {
     background-size: contain;
+    background-position: center center;
+    padding: 18px;
   }
   .project-card__body {
     padding: 24px 24px 28px;
@@ -411,6 +413,22 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 700;
+  }
+  .project-meta .flight-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mint);
+    margin-left: 6px;
+    vertical-align: middle;
+    box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6);
+    animation: project-flight-pulse 2.4s ease-out infinite;
+  }
+  @keyframes project-flight-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(111, 152, 156, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 152, 156, 0); }
   }
   .project-title {
     font-size: 24px;
@@ -875,7 +893,7 @@
   <div class="projects-subhead">finished work</div>
   <div class="projects-grid">
     <a class="project-card project-card--rich" href="namys.html">
-      <div class="project-card__image" style="background-image: url('images/namys-hero.jpg');"></div>
+      <div class="project-card__image" style="background-image: url('images/namys-hero.jpg'); --focus: center center;"></div>
       <div class="project-card__body">
         <div class="project-meta">family-owned industrial holding</div>
         <div class="project-title">Namys Group</div>
@@ -884,7 +902,7 @@
       </div>
     </a>
     <a class="project-card project-card--rich" href="sandco.html">
-      <div class="project-card__image" style="background-image: url('images/sandco-hero.jpg');"></div>
+      <div class="project-card__image" style="background-image: url('images/sandco-hero.jpg'); --focus: center center;"></div>
       <div class="project-card__body">
         <div class="project-meta">industrial · quartz sand production</div>
         <div class="project-title">SandCo</div>
@@ -903,29 +921,35 @@
     </a>
   </div>
 
-  <div class="projects-subhead projects-subhead--secondary">in progress</div>
-  <div class="projects-grid projects-grid--secondary">
-    <div class="project-card project-card--pending">
+  <div class="projects-subhead projects-subhead--secondary">in flight</div>
+  <div class="projects-grid">
+    <a class="project-card project-card--rich" href="kanes.html">
+      <div class="project-card__image project-card__image--contain" style="background-image: url('images/kanes-hero.png'); background-color: #EAE6DC; --focus: center center;"></div>
       <div class="project-card__body">
-        <div class="project-meta">technology · stealth</div>
-        <div class="project-title">In progress</div>
-        <div class="project-snippet">A founder-led technology company. Engagement in flight: positioning, narrative, and identity.</div>
+        <div class="project-meta">fashion · accessories <span class="flight-dot" aria-hidden="true"></span></div>
+        <div class="project-title">KANES</div>
+        <div class="project-snippet">A label on the seam between utility and luxury, released in measured drops.</div>
+        <div class="project-link">view engagement →</div>
       </div>
-    </div>
-    <div class="project-card project-card--pending">
+    </a>
+    <a class="project-card project-card--rich" href="maxawatch.html">
+      <div class="project-card__image project-card__image--contain" style="background-image: url('images/maxawatch-hero.png'); background-color: #1A1A1C; --focus: center center;"></div>
       <div class="project-card__body">
-        <div class="project-meta">technology · stealth</div>
-        <div class="project-title">In progress</div>
-        <div class="project-snippet">A growing technology business. Engagement in flight: strategy and messaging.</div>
+        <div class="project-meta">hardware · wearables <span class="flight-dot" aria-hidden="true"></span></div>
+        <div class="project-title">MaxaWatch</div>
+        <div class="project-snippet">A movement tracker engineered to disappear under the wristwatch you already own.</div>
+        <div class="project-link">view engagement →</div>
       </div>
-    </div>
-    <div class="project-card project-card--pending">
+    </a>
+    <a class="project-card project-card--rich" href="web3wardrobe.html">
+      <div class="project-card__image project-card__image--contain" style="background-image: url('images/web3wardrobe-hero.png'); background-color: #1A1A1C;"></div>
       <div class="project-card__body">
-        <div class="project-meta">fashion · stealth</div>
-        <div class="project-title">In progress</div>
-        <div class="project-snippet">A founder-led fashion label. Engagement in flight: positioning, story, and identity system.</div>
+        <div class="project-meta">platform · fashion <span class="flight-dot" aria-hidden="true"></span></div>
+        <div class="project-title">Web3 Wardrobe</div>
+        <div class="project-snippet">A wardrobe with memory — provenance, authentication, and the trust circular fashion has been missing.</div>
+        <div class="project-link">view engagement →</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
