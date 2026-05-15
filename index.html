@@ -361,6 +361,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: start;
   }
   .projects-grid--secondary {
     margin-bottom: 0;
@@ -384,21 +385,27 @@
     color: var(--purple);
     letter-spacing: 0.06em;
   }
-  .project-card--rich:hover .project-card__image {
+  .project-card--rich:hover .project-card__image img {
     transform: scale(1.04);
   }
   .project-card__image {
     width: 100%;
-    aspect-ratio: 3/2;
-    background-size: cover;
-    background-position: var(--focus, center center);
-    background-repeat: no-repeat;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .project-card__image img {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: transform 0.5s ease;
   }
-  .project-card__image--contain {
-    background-size: contain;
-    background-position: center center;
-    padding: 18px;
+  /* dark frame for images that need a dark plate (MaxaWatch, Web3 Wardrobe) */
+  .project-card__image--dark {
+    background-color: #1A1A1C;
+  }
+  /* light frame for images on cream */
+  .project-card__image--light {
+    background-color: #EAE6DC;
   }
   .project-card__body {
     padding: 24px 24px 28px;
@@ -833,7 +840,6 @@
     .hero-bg-mark { width: 400px; right: -120px; top: 60px; opacity: 0.06; }
     .three-grid { grid-template-columns: 1fr; gap: 40px; }
     .projects-grid { grid-template-columns: 1fr; gap: 16px; }
-    .project-card__image { aspect-ratio: 16/10; }
     .mission-pillars { grid-template-columns: 1fr; gap: 32px; }
     .contact-inner { grid-template-columns: 1fr; gap: 40px; }
     .contact-form { padding: 28px 20px; }
@@ -893,7 +899,9 @@
   <div class="projects-subhead">finished work</div>
   <div class="projects-grid">
     <a class="project-card project-card--rich" href="namys.html">
-      <div class="project-card__image" style="background-image: url('images/namys-hero.jpg'); --focus: center center;"></div>
+      <div class="project-card__image project-card__image--light">
+        <img src="images/namys-hero.jpg" alt="Namys Group">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">family-owned industrial holding</div>
         <div class="project-title">Namys Group</div>
@@ -902,7 +910,9 @@
       </div>
     </a>
     <a class="project-card project-card--rich" href="sandco.html">
-      <div class="project-card__image" style="background-image: url('images/sandco-hero.jpg'); --focus: center center;"></div>
+      <div class="project-card__image project-card__image--light">
+        <img src="images/sandco-hero.jpg" alt="SandCo">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">industrial · quartz sand production</div>
         <div class="project-title">SandCo</div>
@@ -911,7 +921,9 @@
       </div>
     </a>
     <a class="project-card project-card--rich" href="sapa.html">
-      <div class="project-card__image project-card__image--contain" style="background-image: url('images/sapa-brandbook.png'); background-color: #EAE6DC;"></div>
+      <div class="project-card__image project-card__image--light">
+        <img src="images/sapa-brandbook.png" alt="SapaProMaterials">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">industrial · concrete</div>
         <div class="project-title">SapaProMaterials</div>
@@ -924,7 +936,9 @@
   <div class="projects-subhead projects-subhead--secondary">in flight</div>
   <div class="projects-grid">
     <a class="project-card project-card--rich" href="kanes.html">
-      <div class="project-card__image project-card__image--contain" style="background-image: url('images/kanes-hero.png'); background-color: #EAE6DC; --focus: center center;"></div>
+      <div class="project-card__image project-card__image--light">
+        <img src="images/kanes-hero.png" alt="KANES">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">fashion · accessories <span class="flight-dot" aria-hidden="true"></span></div>
         <div class="project-title">KANES</div>
@@ -933,7 +947,9 @@
       </div>
     </a>
     <a class="project-card project-card--rich" href="maxawatch.html">
-      <div class="project-card__image project-card__image--contain" style="background-image: url('images/maxawatch-hero.png'); background-color: #1A1A1C; --focus: center center;"></div>
+      <div class="project-card__image project-card__image--dark">
+        <img src="images/maxawatch-hero.png" alt="MaxaWatch">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">hardware · wearables <span class="flight-dot" aria-hidden="true"></span></div>
         <div class="project-title">MaxaWatch</div>
@@ -942,7 +958,9 @@
       </div>
     </a>
     <a class="project-card project-card--rich" href="web3wardrobe.html">
-      <div class="project-card__image project-card__image--contain" style="background-image: url('images/web3wardrobe-hero.png'); background-color: #1A1A1C;"></div>
+      <div class="project-card__image project-card__image--dark">
+        <img src="images/web3wardrobe-hero.png" alt="Web3 Wardrobe">
+      </div>
       <div class="project-card__body">
         <div class="project-meta">platform · fashion <span class="flight-dot" aria-hidden="true"></span></div>
         <div class="project-title">Web3 Wardrobe</div>
