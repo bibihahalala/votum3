@@ -180,6 +180,109 @@
     padding: 32px;
   }
 
+  /* compact two-column case layout (Spring-Films-inspired) */
+  .case-compact {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 60px;
+  }
+  .case-compact__head {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    margin-bottom: 56px;
+  }
+  .case-compact__meta {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+  }
+  .case-compact__meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--mint);
+  }
+  .case-compact__title {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .case-compact__title em {
+    font-style: normal;
+    color: inherit;
+  }
+  .case-compact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .case-compact__tags span {
+    position: relative;
+    padding-right: 18px;
+  }
+  .case-compact__tags span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: 0;
+    color: var(--mint);
+  }
+  .case-compact__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case-compact__image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
+    background-color: var(--cream-warm);
+    border-radius: 4px;
+  }
+  .case-compact__image--contain {
+    background-size: contain;
+    padding: 32px;
+  }
+  .case-compact__text p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .case-compact__text p:last-child { margin-bottom: 0; }
+  .case-compact__text p.lede {
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) {
+    .case-compact { padding: 32px 24px 60px; }
+    .case-compact__head { padding-bottom: 24px; margin-bottom: 32px; }
+    .case-compact__body {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .case-compact__image { aspect-ratio: 3/2; }
+  }
+
   /* facts strip */
   .case-facts {
     max-width: 1280px;
@@ -338,7 +441,7 @@
 
   /* next case CTA */
   .next-case {
-    margin-top: 120px;
+    margin-top: 0;
     background: var(--purple);
     padding: 100px 40px;
     color: var(--cream);
@@ -456,63 +559,28 @@
   <a href="index.html#projects">← all work</a>
 </div>
 
-<section class="case-hero">
-  <div class="case-meta">case study · finished work</div>
-  <h1 class="case-title">Sapa<em>Pro</em>Materials.</h1>
-  <p class="case-tagline">A successful regional business, made visible for the first time.</p>
-  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/sapa-brandbook.png'); --focus: center center;"></div>
+<section class="case-compact">
+  <div class="case-compact__head">
+    <div class="case-compact__meta">case study · finished work</div>
+    <h1 class="case-compact__title">Sapa<em>Pro</em>Materials.</h1>
+    <div class="case-compact__tags">
+      <span>Industrial · concrete</span>
+      <span>Strategic Advisory</span>
+      <span>Identity</span>
+      <span>Independence</span>
+    </div>
+  </div>
+
+  <div class="case-compact__body">
+    <div class="case-compact__image case-compact__image--contain" style="background-image: url('images/sapa-card.png'); --focus: center center;"></div>
+    <div class="case-compact__text">
+      <p class="lede">A successful regional business, made visible for the first time.</p>
+      <p>SapaProMaterials ran a strong business within its region — but its reputation travelled on the back of its parent company, not its own name.</p>
+      <p>The work was to give it independence: a brand that could stand on its own, recognised for itself rather than borrowed credibility. We delivered a complete identity system and the strategic narrative to carry it forward — the foundation for SapaProMaterials to operate, and be seen, as a sovereign brand.</p>
+      <p><em>More details on request.</em></p>
+    </div>
+  </div>
 </section>
-
-<div class="case-facts">
-  <div>
-    <div class="case-fact-label">Client</div>
-    <div class="case-fact-value">SapaProMaterials</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Industrial · concrete</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Scope</div>
-    <div class="case-fact-value">Strategy · Identity · Guidelines · Culture</div>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">A thriving business — invisible to anyone <em>who hadn't heard the name.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SapaProMaterials had built a successful concrete manufacturing business almost entirely through reputation. Within its region, the name was known and trusted. It is the business that had grown through word-of-mouth, returning customers, and the slow, steady work of doing the product well.</p>
-      <p>Outside that region, it didn't exist in any meaningful way. There was no brand, no public-facing articulation of who SapaProMaterials was or what it stood for. The business was thriving, but invisible to anyone who hadn't heard the name spoken in person.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">02 · What we did</div>
-      <h2 class="case-section-heading">Built the brand <em>from the ground up.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>We built the brand from the ground up. Positioning, work ethics and culture, naming, tone of voice, visual identity, and brand guidelines — a complete identity system designed to translate everything that made SapaProMaterials trusted in its region into a brand legible to customers and partners who would only ever meet the company through a search result, a document, or a referral.</p>
-      <p>The work focused on staying faithful to the reputation already in place, while giving the business the brand infrastructure to grow beyond it.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">03 · Outcome</div>
-      <h2 class="case-section-heading">A brand that <em>matches the work itself.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SapaProMaterials now has a brand that matches the quality of the work itself, a foundation from which the business can extend its reputation into markets it had never been able to reach by word-of-mouth alone.</p>
-    </div>
-  </div>
-
-</div>
 
 <section class="next-case">
   <div class="next-case-inner">

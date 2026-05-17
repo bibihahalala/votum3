@@ -180,6 +180,135 @@
     padding: 32px;
   }
 
+  /* compact two-column case layout (Spring-Films-inspired) */
+  .case-compact {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 60px;
+  }
+  .case-compact__head {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    margin-bottom: 56px;
+  }
+  .case-compact__meta {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+  }
+  .case-compact__meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--mint);
+  }
+  .case-compact__title {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .case-compact__title em {
+    font-style: normal;
+    color: inherit;
+  }
+  .case-compact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .case-compact__tags span {
+    position: relative;
+    padding-right: 18px;
+  }
+  .case-compact__tags span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: 0;
+    color: var(--mint);
+  }
+  .case-compact__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case-compact__image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
+    background-color: var(--cream-warm);
+    border-radius: 4px;
+  }
+  .case-compact__image--contain {
+    background-size: contain;
+    padding: 32px;
+  }
+  .case-compact__text p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .case-compact__text p:last-child { margin-bottom: 0; }
+  .case-compact__text p.lede {
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .case-compact__press {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .case-compact__press-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .case-compact__press a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+  .case-compact__press a:hover { color: var(--purple); gap: 12px; }
+  .case-compact__press .arrow { color: var(--mint); }
+
+  @media (max-width: 900px) {
+    .case-compact { padding: 32px 24px 60px; }
+    .case-compact__head { padding-bottom: 24px; margin-bottom: 32px; }
+    .case-compact__body {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .case-compact__image { aspect-ratio: 3/2; }
+  }
+
   /* facts strip */
   .case-facts {
     max-width: 1280px;
@@ -338,7 +467,7 @@
 
   /* next case CTA */
   .next-case {
-    margin-top: 120px;
+    margin-top: 0;
     background: var(--purple);
     padding: 100px 40px;
     color: var(--cream);
@@ -456,71 +585,28 @@
   <a href="index.html#projects">← all work</a>
 </div>
 
-<section class="case-hero">
-  <div class="case-meta">case study · finished work</div>
-  <h1 class="case-title">Sand<em>Co.</em></h1>
-  <p class="case-tagline">A long-trusted industrial supplier, relaunched as a modern brand.</p>
-  <div class="case-hero-image" style="background-image: url('images/sandco-hero.jpg'); --focus: center center;"></div>
-</section>
-
-<div class="case-facts">
-  <div>
-    <div class="case-fact-label">Client</div>
-    <div class="case-fact-value">SandCo</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Industrial · quartz sand production</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Scope</div>
-    <div class="case-fact-value">Strategy · Identity · Website · Culture</div>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">A strong business, with a brand from <em>a different era.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SandCo is a quartz sand producer supplying high-grade material to the oil and gas, uranium and adjacent industries. The product was excellent, the customer base was stable, and the company was profitable.</p>
-      <p>But the brand had not kept pace with the business. Its identity, its online presence, and its internal culture all reflected a company from a different era of industry. That gap had begun to cost SandCo credibility with the buyers and partners shaping the next decade of the sector.</p>
+<section class="case-compact">
+  <div class="case-compact__head">
+    <div class="case-compact__meta">case study · finished work</div>
+    <h1 class="case-compact__title">Sand<em>Co.</em></h1>
+    <div class="case-compact__tags">
+      <span>Industrial · quartz sand production</span>
+      <span>Strategy</span>
+      <span>Identity</span>
+      <span>Direction</span>
     </div>
   </div>
 
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">02 · What we did</div>
-      <h2 class="case-section-heading">A full rebrand — and a <em>shift in how the company thinks.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>We delivered a full rebrand and relaunch: strategic positioning, a new identity, a new website, and a refreshed presence across every customer touchpoint.</p>
-      <p>The work went deeper than the surface. We worked with the C-suite to shift how leadership thought about the brand, and with operations to align the internal culture and language with the external story. The relaunch became the lever for a broader change inside the business — including a clearer case for reinvestment into modern machinery and modern processes.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">03 · Outcome</div>
-      <h2 class="case-section-heading">On the radar of markets it had been <em>invisible to.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>SandCo relaunched with a modern brand and a strategic position calibrated for the next decade of industrial buyers. The relaunch was covered by <strong>mining.com</strong> and <strong>Yahoo Finance</strong>, putting the company on the radar of markets it had previously been invisible to.</p>
-      <p>Inside the company, the rebrand reset how the leadership team talks about its own work.</p>
+  <div class="case-compact__body">
+    <div class="case-compact__image case-compact__image--contain" style="background-image: url('images/sandco-card.png'); --focus: center center;"></div>
+    <div class="case-compact__text">
+      <p class="lede">A long-trusted industrial supplier, relaunched as a modern brand.</p>
+      <p>SandCo is a quartz sand producer supplying high-grade material to the oil and gas, uranium, and adjacent industries. The product was already excellent and the customer base was stable — what the business had outgrown was its name.</p>
+      <p>We led a full rebrand and relaunch, starting with the naming itself: SandCo. Strategy, positioning, identity, and the broader change inside the business — including technological upgrades and team development — were delivered under our direction, with a network of specialists brought in across the disciplines the work required.</p>
+      <p>SandCo relaunched with a brand that matched the calibre of the operation behind it, and was subsequently covered in leading global press including Yahoo Finance.</p>
+      <p><em>More details on request.</em></p>
     </div>
   </div>
-
-</div>
-
-<section class="case-press">
-  <div class="case-press-label">— in the press</div>
-  <ul class="case-press-list">
-    <li><a href="https://www.mining.com" target="_blank" rel="noopener">mining.com <span class="arrow">↗</span></a></li>
-    <li><a href="https://finance.yahoo.com" target="_blank" rel="noopener">Yahoo Finance <span class="arrow">↗</span></a></li>
-  </ul>
 </section>
 
 <section class="next-case">

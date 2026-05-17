@@ -180,6 +180,105 @@
     padding: 32px;
   }
 
+  /* compact two-column case layout (Spring-Films-inspired) */
+  .case-compact {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 60px;
+  }
+  .case-compact__head {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    margin-bottom: 56px;
+  }
+  .case-compact__meta {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+  }
+  .case-compact__meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--mint);
+  }
+  .case-compact__title {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .case-compact__title em {
+    font-style: normal;
+    color: inherit;
+  }
+  .case-compact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .case-compact__tags span {
+    position: relative;
+    padding-right: 18px;
+  }
+  .case-compact__tags span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: 0;
+    color: var(--mint);
+  }
+  .case-compact__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case-compact__image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
+    background-color: var(--cream-warm);
+    border-radius: 4px;
+  }
+  .case-compact__text p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .case-compact__text p:last-child { margin-bottom: 0; }
+  .case-compact__text p.lede {
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) {
+    .case-compact { padding: 32px 24px 60px; }
+    .case-compact__head { padding-bottom: 24px; margin-bottom: 32px; }
+    .case-compact__body {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .case-compact__image { aspect-ratio: 3/2; }
+  }
+
   /* facts strip */
   .case-facts {
     max-width: 1280px;
@@ -221,6 +320,16 @@
     border-bottom: 1px solid var(--rule);
   }
   .case-section:last-child { border-bottom: none; }
+  .case-section--single {
+    grid-template-columns: 1fr;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+  .case-section--single .case-section-body p {
+    font-size: 22px;
+    line-height: 1.6;
+  }
   .case-section-label {
     font-size: 12px;
     letter-spacing: 0.25em;
@@ -338,7 +447,7 @@
 
   /* next case CTA */
   .next-case {
-    margin-top: 120px;
+    margin-top: 0;
     background: var(--purple);
     padding: 100px 40px;
     color: var(--cream);
@@ -456,70 +565,28 @@
   <a href="index.html#projects">← all work</a>
 </div>
 
-<section class="case-hero">
-  <div class="case-meta">case study · finished work</div>
-  <h1 class="case-title">Namys <em>Group.</em></h1>
-  <p class="case-tagline">A long-established family-owned industrial holding, given a brand to match.</p>
-  <div class="case-hero-image" style="background-image: url('images/namys-hero.jpg'); --focus: center center;"></div>
-</section>
-
-<div class="case-facts">
-  <div>
-    <div class="case-fact-label">Client</div>
-    <div class="case-fact-value">Namys Group</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Family-owned industrial holding</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Scope</div>
-    <div class="case-fact-value">Strategy · Identity · Guidelines · Culture</div>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">The structure was strong. The <em>brand</em> was missing.</h2>
-    </div>
-    <div class="case-section-body">
-      <p>Namys Group is a family-owned industrial holding, built through three decades of careful reinvestment into a portfolio of operating companies. The structure was strong. The leadership was disciplined. The companies inside were generating real results.</p>
-      <p>What the group did not have was a brand. No shared identity, no public-facing story, no clear articulation of what the holding stood for above and beyond its operating businesses. As leadership prepared to hand the group to the next generation, the absence of that articulation had become its own kind of risk.</p>
+<section class="case-compact">
+  <div class="case-compact__head">
+    <div class="case-compact__meta">case study · finished work</div>
+    <h1 class="case-compact__title">Namys <em>Group.</em></h1>
+    <div class="case-compact__tags">
+      <span>Family-owned industrial holding</span>
+      <span>Strategy</span>
+      <span>Identity</span>
+      <span>System</span>
+      <span>Counsel</span>
     </div>
   </div>
 
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">02 · What we did</div>
-      <h2 class="case-section-heading">Defined what Namys Group <em>actually stood for.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>We worked directly with the founding family and senior leadership to define what Namys Group actually stood for: its history, its values, the principles that had guided three decades of decisions.</p>
-      <p>From there, we built the group's strategic positioning, narrative and visual identity. The work covered strategy, identity, brand guidelines, internal language, work culture and the architecture by which the holding presents itself to partners, investors and the next generation of the family.</p>
-    </div>
-  </div>
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">03 · Outcome</div>
-      <h2 class="case-section-heading">A business — and now <em>also a brand.</em></h2>
-    </div>
-    <div class="case-section-body">
+  <div class="case-compact__body">
+    <div class="case-compact__image case-compact__image--contain" style="background-image: url('images/namys-card.png'); --focus: center center;"></div>
+    <div class="case-compact__text">
+      <p class="lede">A long-established family-owned industrial holding, given a brand to match.</p>
+      <p>Namys Group is a family-owned industrial holding, built through three decades of careful reinvestment into a portfolio of operating companies. The leadership had structure and discipline already in place — what they were looking for was a refined vision for the next phase, and a brand at the holding level capable of carrying it.</p>
+      <p>The work was close. We sat directly with the founding family and senior leadership to shape the strategy, the identity, and the internal architecture — how the parent brand relates to the operating companies beneath it — at a pace and proximity that family business of this kind requires.</p>
       <p>Namys Group now operates with a coherent brand identity at the holding level, one that reflects the discipline behind how it was built and the ambition behind where it is going.</p>
-      <p>The next generation of leadership inherits a business, and now also a brand.</p>
+      <p><em>More details on request.</em></p>
     </div>
-  </div>
-
-</div>
-
-<section class="case-gallery">
-  <div class="case-gallery-label">selected visuals</div>
-  <div class="case-gallery-grid">
-    <div class="case-gallery-item" style="background-image: url('images/namys-landscape.jpg'); --focus: center center;"></div>
-    <div class="case-gallery-item case-gallery-item--contain" style="background-image: url('images/namys-logo.png');"></div>
   </div>
 </section>
 
