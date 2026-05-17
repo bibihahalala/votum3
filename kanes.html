@@ -196,6 +196,109 @@
     padding: 32px;
   }
 
+  /* compact two-column case layout (matches finished projects) */
+  .case-compact {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 60px;
+  }
+  .case-compact__head {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    margin-bottom: 56px;
+  }
+  .case-compact__meta {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+  }
+  .case-compact__meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--mint);
+  }
+  .case-compact__title {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .case-compact__title em {
+    font-style: normal;
+    color: inherit;
+  }
+  .case-compact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .case-compact__tags span {
+    position: relative;
+    padding-right: 18px;
+  }
+  .case-compact__tags span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: 0;
+    color: var(--mint);
+  }
+  .case-compact__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case-compact__image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
+    background-color: var(--cream-warm);
+    border-radius: 4px;
+  }
+  .case-compact__image--contain {
+    background-size: contain;
+    padding: 32px;
+  }
+  .case-compact__text p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .case-compact__text p:last-child { margin-bottom: 0; }
+  .case-compact__text p.lede {
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) {
+    .case-compact { padding: 32px 24px 60px; }
+    .case-compact__head { padding-bottom: 24px; margin-bottom: 32px; }
+    .case-compact__body {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .case-compact__image { aspect-ratio: 3/2; }
+  }
+
   /* facts strip */
   .case-facts {
     max-width: 1280px;
@@ -296,7 +399,7 @@
 
   /* in-flight close */
   .in-flight-close {
-    margin-top: 120px;
+    margin-top: 0;
     background: var(--cream-warm);
     padding: 100px 40px;
   }
@@ -436,57 +539,26 @@
   <a href="index.html#projects">← all work</a>
 </div>
 
-<section class="case-hero">
-  <div class="case-meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
-  <h1 class="case-title">KAN<em>ES</em>.</h1>
-  <p class="case-tagline">A label built on the seam between utility and luxury — and the discipline of releasing slowly.</p>
-  <div class="case-hero-image case-hero-image--contain" style="background-image: url('images/kanes-hero.png'); --focus: center center;"></div>
-</section>
-
-<div class="case-facts">
-  <div>
-    <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Fashion · accessories</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Engagement</div>
-    <div class="case-fact-value">Voice · Philosophy</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Status</div>
-    <div class="case-fact-value"><span class="in-flight">In flight</span></div>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">Two ideas <em>most brands choose between.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>KANES is a label that holds two things together that most brands treat as opposites. Utility — the kind that comes from the finest leather and Scottish canvas, materials chosen because they work, not because they signal — and luxury, the kind that comes from making something quietly, deliberately, and in small numbers.</p>
-      <p>The product is a thesis. The way it's released is a thesis too: limited drops, each one finite, no restock. What KANES makes is meant to be used, kept, and slowly outnumbered by the things it outlasts.</p>
+<section class="case-compact">
+  <div class="case-compact__head">
+    <div class="case-compact__meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
+    <h1 class="case-compact__title">KAN<em>ES</em>.</h1>
+    <div class="case-compact__tags">
+      <span>Fashion · accessories</span>
+      <span>Voice</span>
+      <span>Philosophy</span>
+      <span>In flight</span>
     </div>
   </div>
 
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">02 · The engagement</div>
-      <h2 class="case-section-heading">Shaping the voice <em>around what the work already says.</em></h2>
-    </div>
-    <div class="case-section-body">
-      <p>Our work with KANES is on voice and philosophy. The product already articulates the position; what was needed was the language to match it — a way of speaking that was bold without theatre, vocal without volume, and consistent across every touchpoint the label would meet a customer through.</p>
-      <p>The brief was specific: don't soften the position. KANES is not for everyone, and that's the point. The voice has to invite the people it's for and politely lose the people it isn't.</p>
+  <div class="case-compact__body">
+    <div class="case-compact__image case-compact__image--contain" style="background-image: url('images/kanes-card.png'); --focus: center center;"></div>
+    <div class="case-compact__text">
+      <p>KANES is a brand which combines the utilitarian and luxury elements together. Made out of the finest leather and Scottish canvas.</p>
+      <p>We have helped to shape the voice and philosophy of the brand, making it bold and vocal about their unique approach. The brand works on releases by dropping the limited amount of quantity of each product.</p>
+      <p><em>More details on request.</em></p>
     </div>
   </div>
-
-</div>
-
-<section class="case-secondary-image">
-  <div class="case-secondary-image__frame" style="background-image: url('images/kanes-technical.png');"></div>
-  <div class="case-secondary-image__caption">construction · the underlying object</div>
 </section>
 
 <section class="in-flight-close">

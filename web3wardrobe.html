@@ -188,6 +188,109 @@
     padding: 24px;
   }
 
+  /* compact two-column case layout (matches finished projects) */
+  .case-compact {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 60px;
+  }
+  .case-compact__head {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    margin-bottom: 56px;
+  }
+  .case-compact__meta {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+  }
+  .case-compact__meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--mint);
+  }
+  .case-compact__title {
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .case-compact__title em {
+    font-style: normal;
+    color: inherit;
+  }
+  .case-compact__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .case-compact__tags span {
+    position: relative;
+    padding-right: 18px;
+  }
+  .case-compact__tags span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: 0;
+    color: var(--mint);
+  }
+  .case-compact__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case-compact__image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    background-position: var(--focus, center center);
+    background-repeat: no-repeat;
+    background-color: #1A1A1C;
+    border-radius: 4px;
+  }
+  .case-compact__image--contain {
+    background-size: contain;
+    padding: 16px;
+  }
+  .case-compact__text p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .case-compact__text p:last-child { margin-bottom: 0; }
+  .case-compact__text p.lede {
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) {
+    .case-compact { padding: 32px 24px 60px; }
+    .case-compact__head { padding-bottom: 24px; margin-bottom: 32px; }
+    .case-compact__body {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .case-compact__image { aspect-ratio: 3/2; }
+  }
+
   .case-facts {
     max-width: 1280px;
     margin: 0 auto 100px;
@@ -293,7 +396,7 @@
   }
 
   .in-flight-close {
-    margin-top: 120px;
+    margin-top: 0;
     background: var(--cream-warm);
     padding: 100px 40px;
   }
@@ -438,69 +541,23 @@
   <a href="index.html#projects">← all work</a>
 </div>
 
-<section class="case-hero">
-  <div class="case-meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
-  <h1 class="case-title">Web<em>3</em> Wardrobe.</h1>
-  <p class="case-tagline">A wardrobe that remembers — where every piece carries its own history, and trust is built into the platform itself.</p>
-  <div class="case-hero-image" style="background-image: url('images/web3wardrobe-hero.png');"></div>
-</section>
-
-<div class="case-facts">
-  <div>
-    <div class="case-fact-label">Sector</div>
-    <div class="case-fact-value">Platform · fashion</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Engagement</div>
-    <div class="case-fact-value">Full brand build</div>
-  </div>
-  <div>
-    <div class="case-fact-label">Status</div>
-    <div class="case-fact-value"><span class="in-flight">In flight</span></div>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">01 · Context</div>
-      <h2 class="case-section-heading">A wardrobe is a <em>record</em> — most of it just isn't kept.</h2>
-    </div>
-    <div class="case-section-body">
-      <p>The fashion industry has a memory problem. Pieces change hands, but their stories don't. Authenticity has to be proven again every time something is bought or sold. Vintage loses provenance the moment it leaves the rail. Consumers want to shop more circularly, but the infrastructure to do it safely isn't there.</p>
-      <p>Web3 Wardrobe is built on a simple thesis: if every piece carried its own history — where it came from, when it was bought, who has worn it — then trust would be a property of the object itself, not a service that has to be re-purchased. The platform turns ownership into provenance, and provenance into the foundation that circular fashion has been missing.</p>
+<section class="case-compact">
+  <div class="case-compact__head">
+    <div class="case-compact__meta">engagement · in flight <span class="flight-dot" aria-hidden="true"></span></div>
+    <h1 class="case-compact__title">Web<em>3</em> Wardrobe.</h1>
+    <div class="case-compact__tags">
+      <span>Platform · fashion</span>
+      <span>Full brand build</span>
+      <span>In flight</span>
     </div>
   </div>
 
-  <div class="case-section">
-    <div>
-      <div class="case-section-label">02 · The engagement</div>
-      <h2 class="case-section-heading">Naming a category <em>that has to feel like fashion, not like tech.</em></h2>
+  <div class="case-compact__body">
+    <div class="case-compact__image" style="background-image: url('images/web3wardrobe-hero.png'); --focus: center center;"></div>
+    <div class="case-compact__text">
+      <p>Keen on idea of circular economy and love for vintage pieces. We build the platform to keep up on the pieces and know their source, where they were bought and when. The idea of keeping the history of the item made us believe that tracking down the item increases credibility and makes the shopping safer. Authentication is also a vital part and traceability both work for the consumer and the brand in a positive way.</p>
+      <p><em>More details on request.</em></p>
     </div>
-    <div class="case-section-body">
-      <p>Our work is a full build — strategy, positioning, naming, narrative, identity system, and guidelines. The platform is technically ambitious, but the brand has to live in the world of fashion, not in the world of crypto. That's the line the engagement walks: the technology has to be visible enough to earn trust, and invisible enough to stay out of the way of the wardrobe itself.</p>
-      <p>The brand is being built around three ideas — circularity, provenance, and authentication — that the platform makes structurally possible. The work is to make those ideas land for a consumer who has never thought about a blockchain in their life, and never needs to.</p>
-    </div>
-  </div>
-
-</div>
-
-<section class="pillars">
-  <div class="pillar">
-    <div class="pillar-num">i</div>
-    <h4>Circularity</h4>
-    <p>A piece doesn't end at one owner. The wardrobe is a relay, and the platform is the baton.</p>
-  </div>
-  <div class="pillar">
-    <div class="pillar-num">ii</div>
-    <h4>Provenance</h4>
-    <p>Where it came from, when it was bought, what it has lived through. The history is the value.</p>
-  </div>
-  <div class="pillar">
-    <div class="pillar-num">iii</div>
-    <h4>Authentication</h4>
-    <p>Trust isn't a service. It's built into the object — verifiable, persistent, and shared.</p>
   </div>
 </section>
 
