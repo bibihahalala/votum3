@@ -348,7 +348,9 @@ footer {
       <h2>in votum <em>we trust.</em></h2>
       <p class="contact-intro">submit this form to learn how we can help you</p>
 
-      <form id="inquiryForm" action="https://formspree.io/f/yourformid" method="POST">
+      <form id="inquiryForm" action="https://formspree.io/f/mdabjkne" method="POST">
+        <input type="hidden" name="_subject" value="New VOTUM3 enquiry">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
         <div class="form-row">
           <label for="name">your name</label>
           <input type="text" id="name" name="name" required>
@@ -407,8 +409,11 @@ document.addEventListener('keydown', function(e) {
 });
 
 const form = document.getElementById('inquiryForm');
+const submitBtn = form.querySelector('.form-submit');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'sending...';
   const data = new FormData(form);
   fetch(form.action, {
     method: 'POST',
@@ -418,10 +423,17 @@ form.addEventListener('submit', function(e) {
     if (response.ok) {
       form.style.display = 'none';
       document.getElementById('formThanks').style.display = 'block';
+    } else {
+      response.json().then(d => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'send →';
+        alert((d && d.error) || 'something went wrong. please email vivala@votum3.io directly.');
+      });
     }
   }).catch(() => {
-    form.style.display = 'none';
-    document.getElementById('formThanks').style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'send →';
+    alert('something went wrong. please email vivala@votum3.io directly.');
   });
 });
 </script>
